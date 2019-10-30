@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "awebtbkm",
+    "password": "aqthjxSH99F3C2Vyjv3rh9rfYID2lTgj",
+    "database": "awebtbkm",
+    "host": "otto.db.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "awebtbkm",
+    "password": "aqthjxSH99F3C2Vyjv3rh9rfYID2lTgj",
+    "database": "awebtbkm",
+    "host": "otto.db.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "awebtbkm",
+    "password": "aqthjxSH99F3C2Vyjv3rh9rfYID2lTgj",
+    "database": "awebtbkm",
+    "host": "otto.db.elephantsql.com",
+    "dialect": "postgres"
+  }
+}
