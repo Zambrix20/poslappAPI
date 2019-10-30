@@ -12,10 +12,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       estadoBRhE: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       motivoBRhE: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       createdAt: {
         allowNull: false,

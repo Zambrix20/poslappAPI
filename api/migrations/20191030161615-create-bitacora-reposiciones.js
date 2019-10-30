@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       observacionesBitRep: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(255)
       },
       autorizadoBitRep: {
         type: Sequelize.BOOLEAN

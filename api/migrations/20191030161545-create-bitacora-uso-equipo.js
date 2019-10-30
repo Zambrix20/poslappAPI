@@ -12,10 +12,10 @@ module.exports = {
         type: Sequelize.DATE
       },
       muestraBitUE: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       condicionBitUE: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       fechaTermBitUE: {
         type: Sequelize.DATE

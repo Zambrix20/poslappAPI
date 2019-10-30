@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nombreRol: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       filtroPrivilegiosRol: {
         type: Sequelize.BOOLEAN

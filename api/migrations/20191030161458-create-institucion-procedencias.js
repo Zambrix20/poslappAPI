@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nombreInstProc: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(75)
       },
       createdAt: {
         allowNull: false,

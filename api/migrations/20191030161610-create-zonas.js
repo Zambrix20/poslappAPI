@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nombreZona: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       createdAt: {
         allowNull: false,

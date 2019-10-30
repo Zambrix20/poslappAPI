@@ -9,16 +9,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       gradoObtenerBitAp: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       documentoAGenerarBitAp: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       actividadRealizarBitAp: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       descripcionBitAp: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       fechaInitBitAp: {
         type: Sequelize.DATE

@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       estadoMaterialesBPhM: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       fechaEntregaMaterialesBPhM: {
         type: Sequelize.DATE

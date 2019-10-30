@@ -9,19 +9,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nombreEquipo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       modeloEquipo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       serieEquipo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(124)
       },
       imagenEquipo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       observacionesEquipo: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       alimElecEquipo: {
         type: Sequelize.FLOAT

@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       estadoEquiposBPhE: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       fechaEntregaBPhE: {
         type: Sequelize.DATE

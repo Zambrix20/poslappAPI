@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       gradoEscolarAlumnos: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(45)
       },
       activoAlumnos: {
         type: Sequelize.BOOLEAN
