@@ -47,34 +47,33 @@ function getZonas(req, res) {
     }
 }
 
-// function addRol(req, res) {
-//     res.setHeader('Access-Control-Allow-Origin', '*');
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
-//     res.header('Access-Control-Allow-Headers', 'Content-Type');
-//     try {
-//         console.log("params : ");
-//         var myrol = req.body;
-//         console.log("gamesystems ... " + myrol);
-//         return Zonas
-//             .create({
-//                 id_rol: myrol.id,
-//                 nombre_rol: myrol.nombreRol
-//             }, {
-//                 /* include: [{
-//                 model: order_detail,
-//                 as: 'orderdetail'
-//                 }] */
-//             })
-//             .then((myrol) => {
-//                 res.status(201).send(myrol);
-//             })
-//             .catch((error) => res.status(400).send(error));
-//     } catch (error) {
-//         console.log("Was an error");
-//         controllerHelper.handleErrorResponse(MODULE_NAME, addRol.nombreRol, error, res);
-//     }
-// }
+function addZonas(req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    try {
+        console.log("params : ");
+        var myZonas = req.body;
+        console.log("gamesystems ... " + myZonas);
+        return Zonas
+            .create({
+                nombreZona: myZonas.nombreZonas
+            }, {
+                /* include: [{
+                model: order_detail,
+                as: 'orderdetail'
+                }] */
+            })
+            .then((myZonas) => {
+                res.status(201).send(myZonas);
+            })
+            .catch((error) => res.status(400).send(error));
+    } catch (error) {
+        console.log("Was an error");
+        controllerHelper.handleErrorResponse(MODULE_NAME, addZonas.nombreZonas, error, res);
+    }
+}
 
 // function getGameSystemById(req, res) {
 
@@ -191,7 +190,7 @@ function getZonas(req, res) {
 
 module.exports = {
     getZonas,
-    // addZonas,
+    addZonas,
     // getGameSystemById,
     // createGameSystem,
     // updateGameSystem,

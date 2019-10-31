@@ -34,11 +34,36 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-  
+    post:
+      description: add a new zona to the list
+      operationId: addZonas
+      parameters:
+        - in: body
+          name: nombreZonas
+          description: The Zonas to create.
+          schema:
+            $ref: "#/definitions/Zona"
+      responses:
+        "201":
+          description: Success
+          schema:
+            $ref: "#/definitions/GetZonasResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
 definitions:
+  Zona:
+    type: object
+    properties:
+      nombreZonas:
+        type: string
+        description: Name of the Zona
+    required:
+      - nombreZonas
   GetZonasResponse:
     type: object
     properties:
