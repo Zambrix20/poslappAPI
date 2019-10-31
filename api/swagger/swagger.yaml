@@ -103,25 +103,6 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-    delete:
-      description: Borrar unusuario por id (delete a game system)
-      operationId: deleteUsuarios
-      # define the parameters
-      parameters:
-        - name: id
-          description: Usuario id (game system id)
-          type: number
-          in: path
-          required: true
-      responses:
-        "200":
-          description: Success
-          schema:
-            $ref: "#/definitions/GeneralResponse"
-        default:
-          description: Error
-          schema:
-            $ref: "#/definitions/ErrorResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
@@ -132,36 +113,36 @@ definitions:
       #id_usuario:
       #  type: integer
       #  description: Id del usuario (Id of the Game System)
-      nombreUsuario:
+      Nombre_Usuario:
         type: string
         description: Nombre del usuario (Name of the Game System)
-      apellido:
+      Apellido:
         type: string
         description: Apellido del usuario (Description of the zone)
       #image:
       #  type: string
       #  format: binary
-      email:
+      Email:
         type: string
         description: Email del usuario
-      password:
+      Password:
         type: string
         description: Password del usuario
-      fechaNacimiento:
+      Fecha_De_Nacimiento:
         type: string
         format: date
         description: Fecha de Nacimiento del usuario
-      telefono:
+      Telefono:
         type: string
         description: Telefono del usuario
     required:
       #- id_usuario
-      - nombreUsuario
-      - apellido
-      - email
-      - password
-      - fechaNacimiento
-      - telefono
+      - Nombre_Usuario
+      - Apellido
+      - Email
+      - Password
+      - Fecha_De_Nacimiento
+      - Telefono
       
   GetUsuariosResponse:
     type: object
@@ -169,25 +150,25 @@ definitions:
       id_usuario:
         type: integer
         description: Id del usuario (Id of the Game System)
-      nombreUsuario:
+      Nombre_Usuario:
         type: string
         description: Nombre del usuario (Name of the Game System)
-      apellido:
+      Apellido:
         type: string
         description: Apellido del usuario (Description of the zone)
-      image:
+      Image:
         type: string
         format: binary
-      email:
+      Email:
         type: string
         description: Email del usuario
-      password:
+      Password:
         type: string
         description: Password del usuario
-      fechaNacimiento:
+      Fecha_De_Nacimiento:
         type: integer
         description: Fecha de Nacimiento del usuario
-      telefono:
+      Telefono:
         type: string
         description: Telefono del usuario
   GetUsuariosListResponse:
@@ -198,18 +179,18 @@ definitions:
         type: array
         items:
           $ref: "#/definitions/GetUsuariosResponse"
-  GeneralResponse:
-    type: object
-    properties:
-      success:
-        type: integer
-        description: returns 1 if successful
-      description:
-        type: string
-        description: a short comment
-    required:
-      - success
-      - description
+  #GeneralResponse:
+  #  type: object
+  #  properties:
+  #    success:
+  #      type: integer
+  #      description: returns 1 if successful
+  #    description:
+  #      type: string
+  #      description: a short comment
+  #  required:
+  #    - success
+  #    - description
   ErrorResponse:
     required:
       - message

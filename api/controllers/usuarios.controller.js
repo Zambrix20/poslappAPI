@@ -76,12 +76,12 @@ function createUsuarios(req, res) {
         console.log("Usuarios ... " + mygamesystem);
         return Usuarios
         .create({
-            nombreUsuario: mygamesystem.nombreUsuario,
-            apellido: mygamesystem.apellido,
-            email: mygamesystem.email,
-            password: mygamesystem.password,
-            fechaNacimiento: mygamesystem.fechaNacimiento,
-            telefono: mygamesystem.telefono
+            nombreUsuario: mygamesystem.Nombre_Usuario,
+            apellido: mygamesystem.Apellido,
+            email: mygamesystem.Email,
+            password: mygamesystem.Password,
+            fechaNacimiento: mygamesystem.Fecha_De_Nacimiento,
+            telefono: mygamesystem.Telefono
     }, {
         /* include: [{
             model: order_detail,
@@ -117,12 +117,12 @@ function updateUsuarios(req, res) {
       }
     return mygamesystem
     .update({
-        nombreUsuario: myupdategamesystem.nombreUsuario,
-        apellido: myupdategamesystem.apellido,
-        email: myupdategamesystem.email,
-        password: myupdategamesystem.password,
-        fechaNacimiento: myupdategamesystem.fechaNacimiento,
-        telefono: myupdategamesystem.telefono
+        nombreUsuario: myupdategamesystem.Nombre_Usuario,
+        apellido: myupdategamesystem.Apellido,
+        email: myupdategamesystem.Email,
+        password: myupdategamesystem.Password,
+        fechaNacimiento: myupdategamesystem.Fecha_De_Nacimiento,
+        telefono: myupdategamesystem.Telefono
     })
     .then(() => res.status(200).send(mygamesystem) )
       .catch(error => res.status(403).send(mygamesystem));
@@ -137,7 +137,7 @@ function updateUsuarios(req, res) {
 }
 }
 
-function deleteUsuarios(req, res) {
+/*function deleteUsuarios(req, res) {
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
@@ -162,13 +162,13 @@ function deleteUsuarios(req, res) {
   console.log("There was an error: " + error);
 });
 }
-
+*/
 module.exports = {
   getUsuarios,
   getUsuariosByPk,
   createUsuarios,
   updateUsuarios,
-  deleteUsuarios,
+  //deleteUsuarios,
   GS_CT_ERR_Usuarios_NOT_FOUND,
   GS_CT_DELETED_SUCCESSFULLY,
   MODULE_NAME
