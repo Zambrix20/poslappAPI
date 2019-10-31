@@ -4,7 +4,7 @@ var _ = require('lodash');
 
 var controllerHelper = require('../helpers/controller.helper');
 var messageHelper = require('../helpers/message.helper');
-//var gamesystemService = require('../services/gamesystem.service');
+//var zonasService = require('../services/zonas.service');
 
 const { Zonas } = require('../models'); //Sequelize
 ////////////////////////////////////////////////////////////////////////////////
@@ -55,7 +55,7 @@ function addZonas(req, res) {
     try {
         console.log("params : ");
         var myZonas = req.body;
-        console.log("gamesystems ... " + myZonas);
+        console.log("zonass ... " + myZonas);
         return Zonas
             .create({
                 nombreZona: myZonas.nombreZonas
@@ -75,26 +75,26 @@ function addZonas(req, res) {
     }
 }
 
-// function getGameSystemById(req, res) {
+function getZonasById(req, res) {
 
-//     try {
-//         console.log(req.swagger.params.id.value);
-//         var id = req.swagger.params.id.value;
-//         console.log("gamesystem by id..." + id);
-//         //console.log(gamesystems);
-//         Gamesystems.findByPk(id)
-//             .then(mygamesystem => {
-//                 console.log(mygamesystem);
-//                 res.status(200).send(mygamesystem);
-//             })
-//     } catch (error) {
-//         console.log("Was an error");
-//         controllerHelper.handleErrorResponse(MODULE_NAME, getGameSystemById.name, error,
-//             res);
-//     }
-// }
+    try {
+        console.log(req.swagger.params.id.value);
+        var id = req.swagger.params.id.value;
+        console.log("zonas by id..." + id);
+        //console.log(zonass);
+        Zonas.findByPk(id)
+            .then(myzonas => {
+                console.log(myzonas);
+                res.status(200).send(myzonas);
+            })
+    } catch (error) {
+        console.log("Was an error");
+        controllerHelper.handleErrorResponse(MODULE_NAME, getZonasById.name, error,
+            res);
+    }
+}
 
-// function createGameSystem(req, res) {
+// function createZonas(req, res) {
 
 //     res.setHeader('Access-Control-Allow-Origin', '*');
 //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -103,29 +103,29 @@ function addZonas(req, res) {
 
 //     try {
 //         console.log("params : ");
-//         var mygamesystem = req.body;
-//         console.log("gamesystems ... " + mygamesystem);
-//         return Gamesystems
+//         var myzonas = req.body;
+//         console.log("zonass ... " + myzonas);
+//         return Zonas
 //             .create({
-//                 name: mygamesystem.name,
-//                 description: mygamesystem.description,
+//                 name: myzonas.name,
+//                 description: myzonas.description,
 //             }, {
 //                 /* include: [{
 //                 model: order_detail,
 //                 as: 'orderdetail'
 //                 }] */
 //             })
-//             .then((mygamesystem) => {
-//                 res.status(201).send(mygamesystem);
+//             .then((myzonas) => {
+//                 res.status(201).send(myzonas);
 //             })
 //             .catch((error) => res.status(400).send(error));
 //     } catch (error) {
 //         console.log("Was an error");
-//         controllerHelper.handleErrorResponse(MODULE_NAME, createGameSystem.name, error, res);
+//         controllerHelper.handleErrorResponse(MODULE_NAME, createZonas.name, error, res);
 //     }
 // }
 
-// function updateGameSystem(req, res) {
+// function updateZonas(req, res) {
 
 //     res.setHeader('Access-Control-Allow-Origin', '*');
 //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -135,22 +135,22 @@ function addZonas(req, res) {
 //     try {
 //         var id = req.swagger.params.id.value;
 //         console.log("params : " + id);
-//         var myupdategamesystem = req.body;
-//         console.log("update gamesystems ... " + myupdategamesystem.name + " " +
-//             myupdategamesystem.descripcion);
-//         Gamesystems.findByPk(id)
-//             .then(mygamesystem => {
-//                 console.log("Result of findByPk: " + mygamesystem);
-//                 if (!mygamesystem) {
+//         var myupdatezonas = req.body;
+//         console.log("update zonass ... " + myupdatezonas.name + " " +
+//             myupdatezonas.descripcion);
+//         Zonas.findByPk(id)
+//             .then(myzonas => {
+//                 console.log("Result of findByPk: " + myzonas);
+//                 if (!myzonas) {
 //                     res.status(401).send(({}));
 //                 }
-//                 return mygamesystem
+//                 return myzonas
 //                     .update({
-//                         name: myupdategamesystem.name,
-//                         description: myupdategamesystem.description
+//                         name: myupdatezonas.name,
+//                         description: myupdatezonas.description
 //                     })
-//                     .then(() => res.status(200).send(mygamesystem))
-//                     .catch(error => res.status(403).send(mygamesystem));
+//                     .then(() => res.status(200).send(myzonas))
+//                     .catch(error => res.status(403).send(myzonas));
 //             })
 //             .catch(error => {
 //                 console.log("There was an error: " + error);
@@ -158,12 +158,12 @@ function addZonas(req, res) {
 //             });
 //     } catch (error) {
 //         console.log("Was an error");
-//         controllerHelper.handleErrorResponse(MODULE_NAME, updateGameSystem.name, error, res);
+//         controllerHelper.handleErrorResponse(MODULE_NAME, updateZonas.name, error, res);
 //     }
 
 // }
 
-// function deleteGameSystem(req, res) {
+// function deleteZonas(req, res) {
 
 //     res.setHeader('Access-Control-Allow-Origin', '*');
 //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
@@ -171,13 +171,13 @@ function addZonas(req, res) {
 //     res.header('Access-Control-Allow-Headers', 'Content-Type');
 //     console.log(req.swagger.params.id.value);
 //     var id = req.swagger.params.id.value;
-//     Gamesystems.findByPk(id)
-//         .then(mygamesystem => {
-//             console.log("Result of findByPk: " + mygamesystem);
-//             if (!mygamesystem) {
+//     Zonas.findByPk(id)
+//         .then(myzonas => {
+//             console.log("Result of findByPk: " + myzonas);
+//             if (!myzonas) {
 //                 res.status(200).send({ "success": 0, "description": "not found !" });
 //             } else {
-//                 return mygamesystem
+//                 return myzonas
 //                     .destroy()
 //                     .then(() => res.status(200).send({ "success": 1, "message": "deleted!" }))
 //                     .catch(error => res.status(403).send({ "success": 0, "message": "error !" }))
@@ -191,10 +191,10 @@ function addZonas(req, res) {
 module.exports = {
     getZonas,
     addZonas,
-    // getGameSystemById,
-    // createGameSystem,
-    // updateGameSystem,
-    // deleteGameSystem,
+    getZonasById,
+    // createZonas,
+    // updateZonas,
+    // deleteZonas,
     GS_CT_ERR_GAMESYSTEM_NOT_FOUND,
     GS_CT_DELETED_SUCCESSFULLY,
     MODULE_NAME
