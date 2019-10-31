@@ -94,11 +94,58 @@ paths:
           description: El usuario a actualizar (The Game System to update.)
           schema:
             $ref: "#/definitions/Usuarios"
+=======
+  /zonas:
+    x-swagger-router-controller: zonas.controller
+    get:
+      description: das
+      operationId: getZonas
+
       responses:
         "200":
           description: Success
           schema:
-            $ref: "#/definitions/GetUsuariosResponse"
+
+            $ref: "#/definitions/GetZonasListResponse"
+        # responses may fall through to errors
+
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    post:
+      description: add a new zona to the list
+      operationId: addZonas
+      parameters:
+        - in: body
+          name: nombreZonas
+          description: The Zonas to create.
+          schema:
+            $ref: "#/definitions/Zona"
+      responses:
+        "201":
+          description: Success
+          schema:
+            $ref: "#/definitions/GetZonasResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /zonasById/{id}:
+    x-swagger-router-controller: zonas.controller
+    get:
+      description: get a zona
+      operationId: getZonasById
+      parameters:
+        - name: id
+          type: number
+          in: path
+          required: true
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/GetZonasResponse"
         default:
           description: Error
           schema:
@@ -191,6 +238,34 @@ definitions:
   #  required:
   #    - success
   #    - description
+=======
+  Zona:
+    type: object
+    properties:
+      nombreZonas:
+        type: string
+        description: Name of the Zona
+    required:
+      - nombreZonas
+  GetZonasResponse:
+    type: object
+    properties:
+      id:
+        type: number
+        description: identifier
+      name:
+        type: string
+        description: Nombre de la zona
+    required:
+      - name
+  GetZonasListResponse:
+    required:
+      - zonas
+    properties:
+      zonas:
+        type: array
+        items:
+          $ref: "#/definitions/GetZonasResponse"
   ErrorResponse:
     required:
       - message
