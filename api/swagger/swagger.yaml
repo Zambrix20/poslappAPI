@@ -52,7 +52,7 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-  /gamesystems/{id}:
+  /zonasById/{id}:
     x-swagger-router-controller: zonas.controller
     get:
       description: get a zona
